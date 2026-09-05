@@ -1,0 +1,110 @@
+﻿<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGlow" cx="60%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#3d1d11" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#180e0a" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0a0604" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a1810" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#140b07" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="750" fill="url(#bgGlow)"/>
+
+  <!-- Subtle Perspective Grid -->
+  <g opacity="0.12" stroke="#d97706" stroke-width="1">
+    <line x1="0" y1="550" x2="1200" y2="550"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="0" y1="660" x2="1200" y2="660"/>
+    <line x1="0" y1="730" x2="1200" y2="730"/>
+    <line x1="200" y1="500" x2="0" y2="750"/>
+    <line x1="400" y1="500" x2="300" y2="750"/>
+    <line x1="600" y1="500" x2="600" y2="750"/>
+    <line x1="800" y1="500" x2="900" y2="750"/>
+    <line x1="1000" y1="500" x2="1200" y2="750"/>
+  </g>
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="720" cy="350" r="180" fill="#f59e0b" opacity="0.18" filter="url(#glow)"/>
+  <circle cx="450" cy="280" r="120" fill="#ea580c" opacity="0.12" filter="url(#glow)"/>
+
+  <!-- Stylized 3D Cup & Steam Mockup Centerpiece -->
+  <g transform="translate(680, 260)">
+    <!-- Steam Curves -->
+    <path d="M-40,-50 C-60,-110 0,-150 -20,-200" stroke="#fef3c7" stroke-width="3" stroke-linecap="round" opacity="0.35" fill="none"/>
+    <path d="M0,-40 C20,-90 -20,-130 10,-190" stroke="#fef3c7" stroke-width="4" stroke-linecap="round" opacity="0.5" fill="none"/>
+    <path d="M40,-50 C20,-100 60,-140 35,-185" stroke="#fef3c7" stroke-width="3" stroke-linecap="round" opacity="0.3" fill="none"/>
+
+    <!-- 3D Cup Silhouette / Geometry -->
+    <ellipse cx="0" cy="-30" rx="140" ry="45" fill="#29150d" stroke="#f59e0b" stroke-width="3"/>
+    <ellipse cx="0" cy="-30" rx="115" ry="32" fill="#451a03"/>
+    <ellipse cx="0" cy="-30" rx="100" ry="25" fill="#78350f" opacity="0.8"/>
+    
+    <!-- Cup Body -->
+    <path d="M-140,-30 C-130,130 -80,180 0,180 C80,180 130,130 140,-30 Z" fill="#1f100a" stroke="#d97706" stroke-width="2.5"/>
+    
+    <!-- Cup Highlight reflection -->
+    <path d="M-120,-15 C-110,110 -70,150 -40,165" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" opacity="0.4" fill="none"/>
+
+    <!-- Cup Handle -->
+    <path d="M120,-10 C180,-10 180,110 100,120" stroke="#d97706" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M120,-10 C180,-10 180,110 100,120" stroke="#1f100a" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+    <!-- Saucer -->
+    <ellipse cx="0" cy="180" rx="190" ry="45" fill="#180b06" stroke="#b45309" stroke-width="2.5"/>
+    <ellipse cx="0" cy="176" rx="160" ry="35" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+    
+    <!-- 3D Floating Coffee Beans -->
+    <g opacity="0.8" transform="translate(180, -70) rotate(25)">
+      <ellipse cx="0" cy="0" rx="20" ry="28" fill="#451a03" stroke="#b45309" stroke-width="1.5"/>
+      <path d="M0,-24 Q10,0 0,24" stroke="#1a0903" stroke-width="2" fill="none"/>
+    </g>
+    <g opacity="0.6" transform="translate(-190, 70) rotate(-40)">
+      <ellipse cx="0" cy="0" rx="16" ry="22" fill="#381504" stroke="#d97706" stroke-width="1.2"/>
+      <path d="M0,-19 Q-8,0 0,19" stroke="#140602" stroke-width="1.8" fill="none"/>
+    </g>
+  </g>
+
+  <!-- High-Tech UI HUD Overlays -->
+  <!-- Top Left Project Tag -->
+  <g transform="translate(80, 80)">
+    <rect width="210" height="42" rx="21" fill="url(#cardGrad)" stroke="#f59e0b" stroke-opacity="0.3"/>
+    <circle cx="24" cy="21" r="5" fill="#f59e0b"/>
+    <text x="38" y="26" fill="#fef3c7" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">3D CAFE SCENE</text>
+  </g>
+
+  <!-- Left Side Typography -->
+  <g transform="translate(80, 200)">
+    <text x="0" y="0" fill="#92400e" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="14" font-weight="700" letter-spacing="3">CASE STUDY // 01</text>
+    <text x="0" y="55" fill="#ffffff" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="52" font-weight="800" letter-spacing="-1">EMBER &amp; OAK</text>
+    <text x="0" y="95" fill="#fcd34d" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="20" font-weight="600">Atmospheric Scroll-Driven 3D Storefront</text>
+    
+    <!-- Specs Grid -->
+    <g transform="translate(0, 150)">
+      <rect width="360" height="150" rx="16" fill="#1c0f0a" fill-opacity="0.75" stroke="#f59e0b" stroke-opacity="0.2"/>
+      <text x="24" y="38" fill="#d97706" font-family="monospace" font-size="12" letter-spacing="1.5">SCENE ARCHITECTURE</text>
+      <text x="24" y="65" fill="#f3f4f6" font-family="sans-serif" font-size="15" font-weight="500">Scroll-Choreographed Three.js Camera</text>
+      <text x="24" y="95" fill="#f3f4f6" font-family="sans-serif" font-size="15" font-weight="500">Volumetric Lighting &amp; Particle Steam</text>
+      <text x="24" y="125" fill="#10b981" font-family="monospace" font-size="13" font-weight="600">● 60 FPS Locked • Zero Texture Freeze</text>
+    </g>
+  </g>
+
+  <!-- Bottom Floating Interactive Ribbon -->
+  <g transform="translate(80, 640)">
+    <rect width="1040" height="52" rx="12" fill="#140a06" fill-opacity="0.85" stroke="#f59e0b" stroke-opacity="0.3"/>
+    <text x="30" y="32" fill="#fed7aa" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600">TECH STACK:</text>
+    <text x="140" y="32" fill="#ffffff" font-family="sans-serif" font-size="14">Three.js • GSAP ScrollTrigger • Lenis SmoothScroll • Custom Coffee Shaders</text>
+    <text x="960" y="32" fill="#f59e0b" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">LIVE DEMO ↗</text>
+  </g>
+</svg>

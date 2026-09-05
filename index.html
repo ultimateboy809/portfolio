@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nikhil — Creative 3D Web Developer &amp; Technologist</title>
+    
+    <!-- Meta & Open Graph Tags for DMs & Job Applications -->
+    <meta name="description" content="Nikhil is a freelance creative web developer specializing in immersive, high-performance 3D websites, WebGL experiences, and interactive web applications." />
+    <meta name="keywords" content="Creative Developer, 3D Web Developer, Three.js, WebGL, GSAP, Interactive Web, Portfolio, Freelance" />
+    <meta name="author" content="Nikhil" />
+    <meta name="theme-color" content="#090a0f" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nikhil-portfolio.vercel.app/" />
+    <meta property="og:title" content="Nikhil — I Build Web Experiences People Remember" />
+    <meta property="og:description" content="Explore selected 3D interactive web experiences, real-time configurators, and modern web applications built by Nikhil." />
+    <meta property="og:image" content="/src/assets/ember-and-oak.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Nikhil — Creative 3D Web Developer" />
+    <meta property="twitter:description" content="Freelance web developer specializing in interactive 3D websites, from concept to deployment." />
+    <meta property="twitter:image" content="/src/assets/ember-and-oak.svg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23090a0f'/><polygon points='25,75 50,25 75,75' fill='none' stroke='%2300f0ff' stroke-width='8'/><circle cx='50' cy='58' r='10' fill='%2300f0ff'/></svg>" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Skip to Content Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Custom Cursor Follower -->
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        <a href="#hero" class="brand-logo" aria-label="Nikhil Portfolio Home">
+          <span class="logo-symbol">&lt;N/&gt;</span>
+          <span class="logo-text">NIKHIL<span class="accent-dot">.</span>DEV</span>
+        </a>
+
+        <!-- Availability Badge -->
+        <div class="nav-status">
+          <span class="pulse-indicator"></span>
+          <span class="status-label">Available for Freelance Projects</span>
+        </div>
+
+        <nav class="nav-links" id="nav-menu" aria-label="Main Navigation">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#work" class="nav-link">Selected Work</a>
+          <a href="#process" class="nav-link">Process</a>
+          <a href="#contact" class="nav-link nav-cta-mobile">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="main-content">
+      
+      <!-- HERO SECTION -->
+      <section class="hero-section" id="hero">
+        <!-- Interactive Canvas Background -->
+        <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-vignette" aria-hidden="true"></div>
+
+        <div class="container hero-container">
+          <div class="hero-content">
+            
+            <div class="badge-pill hero-badge" data-reveal>
+              <span class="badge-sparkle">✦</span>
+              <span>CREATIVE 3D WEB DEVELOPER</span>
+              <span class="badge-sep">•</span>
+              <span class="badge-highlight">CONCEPT TO DEPLOYMENT</span>
+            </div>
+
+            <h1 class="hero-title" data-reveal>
+              I build web experiences <br class="desk-break" />
+              <span class="gradient-text">people remember.</span>
+            </h1>
+
+            <p class="hero-lead" data-reveal>
+              Freelance web developer crafting immersive 3D websites, WebGL scenes, and high-performance interactive interfaces that turn passive scrollers into loyal clients.
+            </p>
+
+            <div class="hero-actions" data-reveal>
+              <a href="#work" class="btn btn-primary btn-glow">
+                <span>View Selected Work</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <span>Get In Touch</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <!-- Hero Highlights Strip -->
+            <div class="hero-metrics" data-reveal>
+              <div class="metric-item">
+                <span class="metric-num">3D</span>
+                <div class="metric-info">
+                  <strong>Three.js &amp; WebGL</strong>
+                  <span>Custom Shaders &amp; Models</span>
+                </div>
+              </div>
+              <div class="metric-divider"></div>
+              <div class="metric-item">
+                <span class="metric-num">60</span>
+                <div class="metric-info">
+                  <strong>FPS Smooth Motion</strong>
+                  <span>Zero Lag &amp; Lenis Scroll</span>
+                </div>
+              </div>
+              <div class="metric-divider"></div>
+              <div class="metric-item">
+                <span class="metric-num">100%</span>
+                <div class="metric-info">
+                  <strong>Bespoke Engineering</strong>
+                  <span>No Cookie-Cutter Templates</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Scroll Down Cue -->
+        <a href="#about" class="scroll-down-indicator" aria-label="Scroll to About section">
+          <span class="mouse-wheel"></span>
+          <span class="scroll-text">EXPLORE</span>
+        </a>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section class="section about-section" id="about">
+        <div class="container">
+          <div class="section-label" data-reveal>
+            <span class="section-tag">// 01 • ABOUT &amp; PHILOSOPHY</span>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-bio" data-reveal>
+              <h2 class="section-title">
+                Bridging bold visual imagination with <span class="accent-text">rock-solid code.</span>
+              </h2>
+              <div class="bio-text">
+                <p>
+                  Hi, I'm Nikhil. I specialize in building immersive, high-end 3D web applications and creative digital experiences. While most websites look like the same recycled corporate templates, I build custom interactive worlds designed to capture attention and make brands unforgettable.
+                </p>
+                <p>
+                  My work combines real-time 3D graphics (Three.js/WebGL), smooth choreographed scroll animations (GSAP), and fast modern frontend architecture. From concept art to production hosting, I handle the complete pipeline.
+                </p>
+              </div>
+
+              <!-- Differentiator Card -->
+              <div class="differentiator-card">
+                <div class="card-icon">⚡</div>
+                <div class="card-content">
+                  <h3>Why 3D Web Experiences?</h3>
+                  <p>
+                    Attention spans are shorter than ever. A scroll-driven 3D experience stops visitors in their tracks, increases average dwell time by over 200%, and instantly communicates high-tier brand authority.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Stack & Skills -->
+            <div class="about-skills" data-reveal>
+              <div class="skills-header">
+                <span class="skills-title">CORE TECHNOLOGIES &amp; TOOLKIT</span>
+                <span class="skills-sub">Production-tested stack</span>
+              </div>
+
+              <div class="skills-cloud">
+                <div class="skill-pill highlight"><span class="pill-dot"></span>Three.js</div>
+                <div class="skill-pill highlight"><span class="pill-dot"></span>WebGL &amp; GLSL</div>
+                <div class="skill-pill"><span class="pill-dot"></span>GSAP ScrollTrigger</div>
+                <div class="skill-pill"><span class="pill-dot"></span>Lenis Smooth Scroll</div>
+                <div class="skill-pill"><span class="pill-dot"></span>JavaScript (ESNext)</div>
+                <div class="skill-pill"><span class="pill-dot"></span>Vite &amp; Build Pipelines</div>
+                <div class="skill-pill"><span class="pill-dot"></span>React.js</div>
+                <div class="skill-pill"><span class="pill-dot"></span>PBR Materials &amp; Lighting</div>
+                <div class="skill-pill"><span class="pill-dot"></span>3D Model Optimization</div>
+                <div class="skill-pill"><span class="pill-dot"></span>Web Audio API</div>
+                <div class="skill-pill"><span class="pill-dot"></span>Responsive Architecture</div>
+                <div class="skill-pill"><span class="pill-dot"></span>60FPS Performance Tuning</div>
+              </div>
+
+              <!-- Quick Highlights -->
+              <div class="skills-matrix">
+                <div class="matrix-card">
+                  <div class="matrix-header">
+                    <span class="matrix-num">01</span>
+                    <h4>Visual Craft</h4>
+                  </div>
+                  <p>Art directed lighting, camera trajectories, physics-inspired easing, and procedural shaders.</p>
+                </div>
+                <div class="matrix-card">
+                  <div class="matrix-header">
+                    <span class="matrix-num">02</span>
+                    <h4>Speed &amp; Performance</h4>
+                  </div>
+                  <p>Compressed geometry, draw-call minimization, zero memory leaks, and buttery smooth 60fps.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED WORK SECTION -->
+      <section class="section work-section" id="work">
+        <div class="container">
+          
+          <div class="work-header" data-reveal>
+            <div class="section-label">
+              <span class="section-tag">// 02 • FEATURED WORK</span>
+            </div>
+            <h2 class="section-title">Selected Projects &amp; Case Studies</h2>
+            <p class="section-subtitle">
+              Each experience is custom-crafted to solve specific brand objectives. Click <strong>"Visit Live Site"</strong> on any project to experience the full interactive 3D fidelity in real-time.
+            </p>
+          </div>
+
+          <!-- PROJECT CARDS LIST -->
+          <div class="projects-grid">
+
+            <!-- PROJECT 1: EMBER & OAK -->
+            <article class="project-card" data-reveal>
+              <div class="card-inner">
+                <div class="project-media">
+                  <div class="media-container">
+                    <img 
+                      src="/src/assets/ember-and-oak.svg" 
+                      alt="Ember &amp; Oak — 3D Scroll-Driven Cafe Experience Preview" 
+                      loading="lazy" 
+                      class="project-img"
+                    />
+                    <div class="media-overlay">
+                      <a href="https://ember-and-oak-bay.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-live-media">
+                        <span>Launch Live 3D Experience</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <div class="project-meta">
+                    <span class="project-index">01 // 3D SCENE EXPERIENCE</span>
+                    <div class="project-badge-group">
+                      <span class="project-badge concept-badge">Concept / Fictional Work</span>
+                      <span class="project-badge">Scroll-Choreographed</span>
+                    </div>
+                  </div>
+
+                  <h3 class="project-title">
+                    <a href="https://ember-and-oak-bay.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      Ember &amp; Oak
+                    </a>
+                  </h3>
+
+                  <p class="project-description">
+                    An atmospheric, scroll-driven 3D storefront created as a conceptual showcase for a specialty artisanal coffee brand <em>(fictional client for representative showcase purposes)</em>. Features dynamic camera pathways, procedural steam simulation, photorealistic coffee craft, and seamless narrative progression.
+                  </p>
+
+                  <div class="project-tags">
+                    <span class="tag">Three.js</span>
+                    <span class="tag">GSAP ScrollTrigger</span>
+                    <span class="tag">Custom Shaders</span>
+                    <span class="tag">Lenis Smooth Scroll</span>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="https://ember-and-oak-bay.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-card-primary">
+                      <span>Visit Live Site</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
+                    <span class="deployment-status">
+                      <span class="status-dot"></span> Deployed on Vercel
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 2: IRON & GRIT -->
+            <article class="project-card" data-reveal>
+              <div class="card-inner">
+                <div class="project-media">
+                  <div class="media-container">
+                    <img 
+                      src="/src/assets/iron-and-grit.svg" 
+                      alt="IRON &amp; GRIT — Hyperrealistic 3D Gym Brand Experience Preview" 
+                      loading="lazy" 
+                      class="project-img"
+                    />
+                    <div class="media-overlay">
+                      <a href="https://iron-and-grit.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-live-media">
+                        <span>Launch Live 3D Experience</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <div class="project-meta">
+                    <span class="project-index">02 // HYPERREALISTIC 3D BRAND</span>
+                    <div class="project-badge-group">
+                      <span class="project-badge concept-badge">Concept / Fictional Work</span>
+                      <span class="project-badge">Audio &amp; Configurator</span>
+                    </div>
+                  </div>
+
+                  <h3 class="project-title">
+                    <a href="https://iron-and-grit.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      IRON &amp; GRIT
+                    </a>
+                  </h3>
+
+                  <p class="project-description">
+                    A high-octane fitness and athletic brand platform engineered with hyperrealistic industrial 3D scenes <em>(fictional brand created for representative showcase purposes)</em>. Includes an interactive barbell weight configurator, knurling surface inspection, post-processing bloom, and spatial audio synthesis.
+                  </p>
+
+                  <div class="project-tags">
+                    <span class="tag">Three.js</span>
+                    <span class="tag">Interactive 3D Configurator</span>
+                    <span class="tag">Web Audio API</span>
+                    <span class="tag">PostProcessing Bloom</span>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="https://iron-and-grit.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-card-primary">
+                      <span>Visit Live Site</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
+                    <span class="deployment-status">
+                      <span class="status-dot"></span> Deployed on Vercel
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 3: MERIDIAN -->
+            <article class="project-card" data-reveal>
+              <div class="card-inner">
+                <div class="project-media">
+                  <div class="media-container">
+                    <img 
+                      src="/src/assets/meridian.svg" 
+                      alt="MERIDIAN — 3D E-Commerce Product Configurator Preview" 
+                      loading="lazy" 
+                      class="project-img"
+                    />
+                    <div class="media-overlay">
+                      <a href="https://meridian-nu-steel.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-live-media">
+                        <span>Launch Live 3D Experience</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <div class="project-meta">
+                    <span class="project-index">03 // 3D E-COMMERCE</span>
+                    <div class="project-badge-group">
+                      <span class="project-badge concept-badge">Concept / Fictional Work</span>
+                      <span class="project-badge">Product Configurator</span>
+                    </div>
+                  </div>
+
+                  <h3 class="project-title">
+                    <a href="https://meridian-nu-steel.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      MERIDIAN
+                    </a>
+                  </h3>
+
+                  <p class="project-description">
+                    A cutting-edge 3D product configurator for a luxury technical outerwear brand <em>(fictional brand created for representative showcase purposes)</em>. Features real-time PBR material swatch swapping, 360-degree orbit camera inspection, interactive audio feedback, and a sleek cart drawer workflow.
+                  </p>
+
+                  <div class="project-tags">
+                    <span class="tag">Three.js</span>
+                    <span class="tag">PBR Materials</span>
+                    <span class="tag">OrbitControls</span>
+                    <span class="tag">E-Commerce Architecture</span>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="https://meridian-nu-steel.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-card-primary">
+                      <span>Visit Live Site</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
+                    <span class="deployment-status">
+                      <span class="status-dot"></span> Deployed on Vercel
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 4: PASS KARO -->
+            <article class="project-card project-card-utility" data-reveal>
+              <div class="card-inner">
+                <div class="project-media">
+                  <div class="media-container">
+                    <img 
+                      src="/src/assets/pass-karo.svg" 
+                      alt="Pass Karo — Functional Academic Web App Preview" 
+                      loading="lazy" 
+                      class="project-img"
+                    />
+                    <div class="media-overlay">
+                      <a href="https://passkaro-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-live-media">
+                        <span>Launch Live Web App</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <div class="project-meta">
+                    <span class="project-index">04 // FUNCTIONAL WEB APP</span>
+                    <span class="project-badge app-badge">Engineering Range</span>
+                  </div>
+
+                  <h3 class="project-title">
+                    <a href="https://passkaro-app.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      Pass Karo
+                    </a>
+                  </h3>
+
+                  <p class="project-description">
+                    A production-ready academic utility built for BTech students to calculate internal and end-sem marks, evaluate university cutoff thresholds, track attendance percentages, and plan examination targets. Demonstrates full-stack logic, data persistence, and problem-solving beyond 3D visual showcases.
+                  </p>
+
+                  <div class="project-tags">
+                    <span class="tag">JavaScript (ES6+)</span>
+                    <span class="tag">State Management</span>
+                    <span class="tag">LocalStorage Persistence</span>
+                    <span class="tag">Responsive Dashboard</span>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="https://passkaro-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-card-primary">
+                      <span>Visit Live Site</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
+                    <span class="deployment-status">
+                      <span class="status-dot"></span> Deployed on Vercel
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS / HOW I WORK SECTION -->
+      <section class="section process-section" id="process">
+        <div class="container">
+          
+          <div class="section-label" data-reveal>
+            <span class="section-tag">// 03 • WORKFLOW</span>
+          </div>
+
+          <div class="process-header" data-reveal>
+            <h2 class="section-title">How we work together</h2>
+            <p class="section-subtitle">
+              A transparent, low-risk, milestone-driven process designed to take your website from initial vision to a polished 60FPS deployment.
+            </p>
+          </div>
+
+          <div class="process-steps-grid">
+            
+            <div class="process-step-card" data-reveal>
+              <div class="step-badge">01</div>
+              <div class="step-phase">DISCOVER &amp; STRATEGIZE</div>
+              <h3 class="step-title">Concept &amp; Art Direction</h3>
+              <p class="step-desc">
+                We align on your brand story, interactive goals, and visitor conversion path. We map out 3D scenes, moodboards, and establish strict performance budgets so your site remains lightning-fast.
+              </p>
+              <ul class="step-list">
+                <li><span>✓</span> Scene storyboarding &amp; camera paths</li>
+                <li><span>✓</span> 3D asset sourcing / procedural planning</li>
+                <li><span>✓</span> Device performance benchmarks</li>
+              </ul>
+            </div>
+
+            <div class="process-step-card highlight-step" data-reveal>
+              <div class="step-badge">02</div>
+              <div class="step-phase">DEVELOP &amp; ITERATE</div>
+              <h3 class="step-title">3D Engineering &amp; Motion</h3>
+              <p class="step-desc">
+                I build the Three.js scenes, custom GLSL shaders, and GSAP scroll triggers. You receive staged staging previews at key milestones so you can test and provide feedback in real-time.
+              </p>
+              <ul class="step-list">
+                <li><span>✓</span> WebGL lighting &amp; material shaders</li>
+                <li><span>✓</span> Smooth Lenis scroll choreography</li>
+                <li><span>✓</span> Mobile-first responsive adaptation</li>
+              </ul>
+            </div>
+
+            <div class="process-step-card" data-reveal>
+              <div class="step-badge">03</div>
+              <div class="step-phase">OPTIMIZE &amp; DEPLOY</div>
+              <h3 class="step-title">60FPS Audit &amp; Global Launch</h3>
+              <p class="step-desc">
+                Comprehensive cross-browser stress testing, geometry compression, SEO optimization, and global deployment to Vercel/Netlify with CDN caching and analytics integration.
+              </p>
+              <ul class="step-list">
+                <li><span>✓</span> Draw-call &amp; memory profiling</li>
+                <li><span>✓</span> Meta tags &amp; Open Graph configuration</li>
+                <li><span>✓</span> Seamless domain launch &amp; handoff</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section class="section contact-section" id="contact">
+        <div class="container">
+          
+          <div class="contact-box" data-reveal>
+            <div class="contact-grid">
+              
+              <!-- Contact Info Left Column -->
+              <div class="contact-info">
+                <div class="section-label">
+                  <span class="section-tag">// 04 • GET IN TOUCH</span>
+                </div>
+                <h2 class="contact-title">
+                  Let's build something <span class="gradient-text">unforgettable.</span>
+                </h2>
+                <p class="contact-subtitle">
+                  Whether you're looking for a complete 3D brand site, an interactive product configurator, or have a freelance inquiry — drop a message and let's discuss how to bring it to life.
+                </p>
+
+                <div class="contact-details">
+                  
+                  <a href="mailto:nikhilforinternship@gmail.com" class="contact-item">
+                    <div class="contact-icon">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </div>
+                    <div class="contact-text">
+                      <span class="item-label">Direct Email</span>
+                      <strong class="item-val">nikhilforinternship@gmail.com</strong>
+                    </div>
+                  </a>
+
+                  <div class="contact-item">
+                    <div class="contact-icon">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <div class="contact-text">
+                      <span class="item-label">Response Time</span>
+                      <strong class="item-val">Within 24 Hours • Worldwide</strong>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Social Profiles Strip (Instagram Only) -->
+                <div class="social-links">
+                  <span class="social-label">INSTAGRAM &amp; SOCIAL:</span>
+                  <div class="social-pills">
+                    <a href="https://www.instagram.com/webwi_thnikhil/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram (@webwi_thnikhil)">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                      <span>@webwi_thnikhil</span>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Contact Form Right Column -->
+              <div class="contact-form-card">
+                <form id="contact-form" class="inquiry-form" novalidate>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="name">Your Name <span class="required">*</span></label>
+                      <input type="text" id="name" name="name" placeholder="Alex Rivers" required />
+                      <span class="field-error" id="name-error">Please enter your name</span>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email">Email Address <span class="required">*</span></label>
+                      <input type="email" id="email" name="email" placeholder="alex@company.com" required />
+                      <span class="field-error" id="email-error">Please enter a valid email</span>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="project-type">Project Type</label>
+                      <div class="select-wrapper">
+                        <select id="project-type" name="project-type">
+                          <option value="3D Interactive Website">Interactive 3D Website</option>
+                          <option value="3D Product Configurator">3D Product Configurator</option>
+                          <option value="Brand Experience Site">Brand Experience Platform</option>
+                          <option value="Web App Development">Web App / Custom Development</option>
+                          <option value="Other Inquiry">Other Inquiry</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="budget">Approximate Budget</label>
+                      <div class="budget-input-wrapper">
+                        <div class="currency-select-wrapper">
+                          <select id="budget-currency" name="currency" aria-label="Currency selector">
+                            <option value="₹">₹ (INR)</option>
+                            <option value="$">$ (USD)</option>
+                          </select>
+                        </div>
+                        <input type="text" id="budget" name="budget" placeholder="Enter budget (or Flexible)" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Project Details / Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell me about your brand, requirements, goals, or timeline..." required></textarea>
+                    <span class="field-error" id="message-error">Please enter a message</span>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                    <span class="btn-text">Send Message</span>
+                    <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    <span class="spinner" aria-hidden="true"></span>
+                  </button>
+
+                  <div class="form-feedback" id="form-feedback" role="alert"></div>
+
+                  <p class="form-disclaimer">
+                    Direct inquiries also welcome via <a href="mailto:nikhilforinternship@gmail.com">nikhilforinternship@gmail.com</a>.
+                  </p>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-left">
+          <div class="footer-logo">NIKHIL<span class="accent-dot">.</span>DEV</div>
+          <p class="footer-tagline">Crafting memorable 3D web experiences worldwide.</p>
+        </div>
+        
+        <div class="footer-center">
+          <span class="timezone-indicator">
+            <span class="status-pulse-green"></span>
+            IST (UTC+5:30) • Fast Turnaround
+          </span>
+        </div>
+
+        <div class="footer-right">
+          <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to top">
+            <span>Back to top</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Main Module Script -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
