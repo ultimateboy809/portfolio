@@ -461,7 +461,7 @@ function initContactForm() {
       feedback.style.display = 'block';
       form.reset();
     } catch (err) {
-      feedback.textContent = 'Something went wrong. Please email directly at nikhilforinternship@gmail.com.';
+      feedback.textContent = 'Something went wrong. Please email directly at hello.nikhilweb@gmail.com.';
       feedback.classList.add('error');
       feedback.style.display = 'block';
     } finally {
