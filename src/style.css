@@ -1497,10 +1497,18 @@ h1, h2, h3, h4, h5, h6 {
   color: #f87171;
 }
 
+.form-footer-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: center;
+}
+
 .form-disclaimer {
   font-size: 0.8rem;
   color: var(--text-muted);
   text-align: center;
+  line-height: 1.4;
 }
 
 .form-disclaimer a {
