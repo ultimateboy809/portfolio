@@ -450,18 +450,37 @@ function initContactForm() {
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    // Form submission processing
-    // NOTE: To hook this up to a live backend service like Formspree, Formkeep, or EmailJS,
-    // Nikhil can replace the endpoint below with his Formspree ID: https://formspree.io/f/YOUR_ID
+    // Form submission processing via Web3Forms
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1200)); // Smooth simulated dispatch
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      object.access_key = '40495ed9-e150-4c42-b413-74ef97989fa5';
+      object.subject = `New Portfolio Inquiry from ${nameInput.value.trim()}`;
+      object.from_name = `${nameInput.value.trim()} via Nikhil Portfolio`;
 
-      feedback.innerHTML = `✓ Thank you, <strong>${nameInput.value.trim()}</strong>! Your message has been sent. Nikhil will get back to you within 24 hours.`;
-      feedback.classList.add('success');
-      feedback.style.display = 'block';
-      form.reset();
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(object),
+      });
+
+      const result = await response.json();
+
+      if (response.status === 200 && result.success) {
+        feedback.innerHTML = `✓ Thank you, <strong>${nameInput.value.trim()}</strong>! Your message has been sent successfully. Nikhil will get back to you within 24 hours.`;
+        feedback.classList.add('success');
+        feedback.style.display = 'block';
+        form.reset();
+      } else {
+        feedback.textContent = result.message || 'Something went wrong. Please email directly at hello.nikhilweb@gmail.com.';
+        feedback.classList.add('error');
+        feedback.style.display = 'block';
+      }
     } catch (err) {
-      feedback.textContent = 'Something went wrong. Please email directly at hello.nikhilweb@gmail.com.';
+      feedback.textContent = 'Network error. Please email directly at hello.nikhilweb@gmail.com.';
       feedback.classList.add('error');
       feedback.style.display = 'block';
     } finally {
